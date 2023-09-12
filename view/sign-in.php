@@ -7,6 +7,7 @@
 <meta name="description" content="Responsive Bootstrap 4 and web Application ui kit.">
 
 <title>SISTEMA DE CONTROL DE DOCUMENTOS</title>
+<php>echo "hola";</php>
 <!-- Favicon-->
 <link rel="icon" href="favicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="../public/plugins/bootstrap/css/bootstrap.min.css">
