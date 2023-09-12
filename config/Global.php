@@ -4,10 +4,10 @@
 define("DB_HOST","181.188.156.195");
 
 //Nombre de la base de datos
-define("DB_NAME", "mydb");
+define("DB_NAME", "doc_final");
 
 //Usuario de la base de datos
-define("DB_USERNAME", "admin");
+define("DB_USERNAME", "mydb");
 
 //Contraseña del usuario de la base de datos
 define("DB_PASSWORD", "admin1234");
