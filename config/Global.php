@@ -4,7 +4,7 @@
 define("DB_HOST","181.188.156.195");
 
 //Nombre de la base de datos
-define("DB_NAME", "doc_final");
+define("DB_NAME", "mydb");
 
 //Usuario de la base de datos
 define("DB_USERNAME", "admin");
