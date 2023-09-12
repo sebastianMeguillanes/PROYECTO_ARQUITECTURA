@@ -1,47 +1,28 @@
-<?php 
+<?php
+$conexion = pg_connect("host=181.188.156.195 port=18004 dbname=mydb user=admin password=admin1234");
 
-require_once "global.php";
-$conexion = pg_connect("host=".DB_HOST." port=".DB_PORT." dbname=".DB_NAME." user=".DB_USERNAME." password=".DB_PASSWORD."");
-
-if (!$conexion)
-{
-	printf("Error : Unable to open database\n");
-	exit();
-}
-    
-if (!function_exists('ejecutarConsulta'))
-{
-	function ejecutarConsulta($sql)
-	{
-		global $conexion;
-		$query = pg_query($conexion, $sql);
-		return $query;
-	}
-
-	function ejecutarConsultaSimpleFila($sql)
-	{
-		global $conexion;
-		$query = pg_query($conexion, $sql);
-		$row = pg_fetch_assoc($query);
-		return $row;
-	}
-
-	function ejecutarConsulta_retornarID($sql)
-	{
-		global $conexion;
-		$query = pg_query($conexion, $sql);
-		$row = pg_fetch_array($query);
-		$new_id = $row['0'];
-		return $new_id;
-	}
-	
-	function cerrar_conexion($sql)
-	{
-		global $conexion;
-		pg_close($conexion);
-		return true;
-	}
-	
+if (!$conexion) {
+    printf("Error: No se pudo conectar a la base de datos\n");
+    exit();
 }
 
+// A partir de aquí, puedes utilizar la variable $conexion para interactuar con la base de datos.
+
+// Por ejemplo, ejecutar una consulta:
+$query = "SELECT * FROM tu_tabla";
+$resultado = pg_query($conexion, $query);
+
+if (!$resultado) {
+    echo "Error en la consulta.\n";
+    exit();
+}
+
+// Recorrer los resultados de la consulta:
+while ($fila = pg_fetch_assoc($resultado)) {
+    // Hacer algo con los datos, por ejemplo, imprimirlos.
+    print_r($fila);
+}
+
+// No olvides cerrar la conexión cuando hayas terminado:
+pg_close($conexion);
 ?>

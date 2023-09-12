@@ -49,7 +49,6 @@
                             <button class="btn btn-primary btn-round btn-block" type="submit">SIGN IN</button>                         
                         </form>
                         <div class="footer">
-                         
                             <a href="sign-up.html" class="btn btn-primary btn-simple btn-round btn-block">SIGN UP</a>
                         </div>
                         <a href="#" class="link">Forgot Password?</a>
